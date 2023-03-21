@@ -1,0 +1,326 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>DASHMIN - Bootstrap Admin Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="{% static 'img/favicon.ico' %}" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css' %}" rel="stylesheet" />
+    
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'css/beautified.css' %}" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+
+<body>
+        <div class="container-xxl position-relative bg-white d-flex p-0">
+            <!-- Spinner Start -->
+            <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+                <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                    <span class="sr-only">Ulipo Tupo...</span>
+                </div>
+            </div>
+            <!-- Spinner End -->
+    
+    
+            <!-- Sidebar Start -->
+            <div class="sidebar dark pe-4 pb-3">
+                <nav class="navbar darki navbar-light">
+                  
+                    <div class="d-flex align-items-center ms-4 mb-4">
+                        <div class="position-relative">
+                            <img class="rounded-circle" src="https://thumbs.dreamstime.com/z/young-handsome-man-portrait-passport-driver-licence-document-id-photo-concept-176635965.jpg" alt="" style="width: 40px; height: 40px;object-fit: cover">
+                            <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
+                        </div>
+                        <div class="ms-3">
+                            <h6 class="mb-0">Sams Wensley</h6>
+                            <span>User</span>
+                        </div>
+                    </div>
+                    <div class="navbar-nav w-100">
+                        <a href="index.html" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>loan Application</a>
+                            <div class="dropdown-menu bg-transparent border-0">
+                                <a href="#" class="dropdown-item">Apply for JIjenge</a>
+                                <a href="#" class="dropdown-item">Apply for Personal loan</a>
+                                <a href="#" class="dropdown-item">Apply for SME loan</a>
+                            </div>
+                        </div>
+                        <a href="#" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Loan Payment</a>
+                        <a href="blank.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Reports</a>
+                        <a href="NOTIFICATIONS.html" class="nav-item nav-link active"><i class="fa fa-table me-2"></i>Notifications</a>
+                      
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <!-- Sidebar End -->
+    
+    
+            <!-- Content Start -->
+            <div class="content">
+                <!-- Navbar Start -->
+                <nav class="navbar navbar-expand bg-ligh navbar-light sticky-top px-4 py-0">
+                    <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
+                        <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2>
+                    </a>
+                    <a href="#" class="sidebar-toggler flex-shrink-0">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                    <div class="d-none d-md-flex ms-4">
+                            <img src="{% static 'img/CRDB-LOGO.png' %}"alt="crdb logo" style="width: 150px; height: auto; object-fit: cover;margin-left: 20px;">
+                   
+                    </div>
+                  
+                    <div class="navbar-nav align-items-center ms-auto">
+                        <div class="nav-item dropdown">
+                            
+                            <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+                                <a href="#" class="dropdown-item">
+                                    <div class="d-flex align-items-center">
+                                        <img class="rounded-circle" src="{% static 'img/user.jpg' %}" alt="" style="width: 40px; height: 40px;">
+                                        <div class="ms-2">
+                                            <h6 class="fw-normal mb-0">Jhon send you a message</h6>
+                                            <small>15 minutes ago</small>
+                                        </div>
+                                    </div>
+                                </a>
+                                <hr class="dropdown-divider">
+                                <a href="#" class="dropdown-item">
+                                    <div class="d-flex align-items-center">
+                                        <img class="rounded-circle" src="{% static 'img/user.jpg' %}" alt="" style="width: 40px; height: 40px;">
+                                        <div class="ms-2">
+                                            <h6 class="fw-normal mb-0">Jhon send you a message</h6>
+                                            <small>15 minutes ago</small>
+                                        </div>
+                                    </div>
+                                </a>
+                                <hr class="dropdown-divider">
+                                <a href="#" class="dropdown-item">
+                                    <div class="d-flex align-items-center">
+                                        <img class="rounded-circle" src="{% static 'img/user.jpg' %}" alt="" style="width: 40px; height: 40px;">
+                                        <div class="ms-2">
+                                            <h6 class="fw-normal mb-0">Jhon send you a message</h6>
+                                            <small>15 minutes ago</small>
+                                        </div>
+                                    </div>
+                                </a>
+                                <hr class="dropdown-divider">
+                                <a href="#" class="dropdown-item text-center">See all message</a>
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                                <i class="fa fa-bell me-lg-2"></i>
+                                <span class="d-none d-lg-inline-flex">Notification</span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+                                <a href="#" class="dropdown-item">
+                                    <h6 class="fw-normal mb-0">Profile updated</h6>
+                                    <small>15 minutes ago</small>
+                                </a>
+                                <hr class="dropdown-divider">
+                                <a href="#" class="dropdown-item">
+                                    <h6 class="fw-normal mb-0">New user added</h6>
+                                    <small>15 minutes ago</small>
+                                </a>
+                                <hr class="dropdown-divider">
+                                <a href="#" class="dropdown-item">
+                                    <h6 class="fw-normal mb-0">Password changed</h6>
+                                    <small>15 minutes ago</small>
+                                </a>
+                                <hr class="dropdown-divider">
+                                <a href="#" class="dropdown-item text-center">See all notifications</a>
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                                <img class="rounded-circle me-lg-2" src="https://thumbs.dreamstime.com/z/young-handsome-man-portrait-passport-driver-licence-document-id-photo-concept-176635965.jpg" alt="" style="width: 40px; height: 40px;object-fit: cover;">
+                                <span class="d-none d-lg-inline-flex">Sams Wensley</span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+                                <a href="#" class="dropdown-item">My Profile</a>
+                                <a href="#" class="dropdown-item">Settings</a>
+                                <a href="{% url 'signin' %}" class="dropdown-item">Log Out</a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+                <!-- Navbar End -->
+    
+
+            <!-- Customer table Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4 nl">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M319.9 320c57.41 0 103.1-46.56 103.1-104c0-57.44-46.54-104-103.1-104c-57.41 0-103.1 46.56-103.1 104C215.9 273.4 262.5 320 319.9 320zM369.9 352H270.1C191.6 352 128 411.7 128 485.3C128 500.1 140.7 512 156.4 512h327.2C499.3 512 512 500.1 512 485.3C512 411.7 448.4 352 369.9 352zM512 160c44.18 0 80-35.82 80-80S556.2 0 512 0c-44.18 0-80 35.82-80 80S467.8 160 512 160zM183.9 216c0-5.449 .9824-10.63 1.609-15.91C174.6 194.1 162.6 192 149.9 192H88.08C39.44 192 0 233.8 0 285.3C0 295.6 7.887 304 17.62 304h199.5C196.7 280.2 183.9 249.7 183.9 216zM128 160c44.18 0 80-35.82 80-80S172.2 0 128 0C83.82 0 48 35.82 48 80S83.82 160 128 160zM551.9 192h-61.84c-12.8 0-24.88 3.037-35.86 8.24C454.8 205.5 455.8 210.6 455.8 216c0 33.71-12.78 64.21-33.16 88h199.7C632.1 304 640 295.6 640 285.3C640 233.8 600.6 192 551.9 192z"/></svg>
+                            <div class="ms-3">
+                                <p class="mb-2">Account Number</p>
+                                <h6 class="mb-0">0J991426893789</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4 nl">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M243.4 2.587C251.4-.8625 260.6-.8625 268.6 2.587L492.6 98.59C506.6 104.6 514.4 119.6 511.3 134.4C508.3 149.3 495.2 159.1 479.1 160V168C479.1 181.3 469.3 192 455.1 192H55.1C42.74 192 31.1 181.3 31.1 168V160C16.81 159.1 3.708 149.3 .6528 134.4C-2.402 119.6 5.429 104.6 19.39 98.59L243.4 2.587zM256 128C273.7 128 288 113.7 288 96C288 78.33 273.7 64 256 64C238.3 64 224 78.33 224 96C224 113.7 238.3 128 256 128zM127.1 416H167.1V224H231.1V416H280V224H344V416H384V224H448V420.3C448.6 420.6 449.2 420.1 449.8 421.4L497.8 453.4C509.5 461.2 514.7 475.8 510.6 489.3C506.5 502.8 494.1 512 480 512H31.1C17.9 512 5.458 502.8 1.372 489.3C-2.715 475.8 2.515 461.2 14.25 453.4L62.25 421.4C62.82 420.1 63.41 420.6 63.1 420.3V224H127.1V416z"/></svg>
+                            <div class="ms-3">
+                                <p class="mb-2">Account Type</p>
+                                <h6 class="mb-0">Savings Account</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4 nl">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Pro 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M535 7.03C544.4-2.343 559.6-2.343 568.1 7.029L632.1 71.02C637.5 75.52 640 81.63 640 87.99C640 94.36 637.5 100.5 632.1 104.1L568.1 168.1C559.6 178.3 544.4 178.3 535 168.1C525.7 159.6 525.7 144.4 535 135L558.1 111.1L384 111.1C370.7 111.1 360 101.2 360 87.99C360 74.74 370.7 63.99 384 63.99L558.1 63.1L535 40.97C525.7 31.6 525.7 16.4 535 7.03V7.03zM104.1 376.1L81.94 400L255.1 399.1C269.3 399.1 279.1 410.7 279.1 423.1C279.1 437.2 269.3 447.1 255.1 447.1L81.95 448L104.1 471C114.3 480.4 114.3 495.6 104.1 504.1C95.6 514.3 80.4 514.3 71.03 504.1L7.029 440.1C2.528 436.5-.0003 430.4 0 423.1C0 417.6 2.529 411.5 7.03 407L71.03 343C80.4 333.7 95.6 333.7 104.1 343C114.3 352.4 114.3 367.6 104.1 376.1H104.1zM95.1 64H337.9C334.1 71.18 332 79.34 332 87.1C332 116.7 355.3 139.1 384 139.1L481.1 139.1C484.4 157.5 494.9 172.5 509.4 181.9C511.1 184.3 513.1 186.6 515.2 188.8C535.5 209.1 568.5 209.1 588.8 188.8L608 169.5V384C608 419.3 579.3 448 544 448H302.1C305.9 440.8 307.1 432.7 307.1 423.1C307.1 395.3 284.7 371.1 255.1 371.1L158.9 372C155.5 354.5 145.1 339.5 130.6 330.1C128.9 327.7 126.9 325.4 124.8 323.2C104.5 302.9 71.54 302.9 51.23 323.2L31.1 342.5V128C31.1 92.65 60.65 64 95.1 64V64zM95.1 192C131.3 192 159.1 163.3 159.1 128H95.1V192zM544 384V320C508.7 320 480 348.7 480 384H544zM319.1 352C373 352 416 309 416 256C416 202.1 373 160 319.1 160C266.1 160 223.1 202.1 223.1 256C223.1 309 266.1 352 319.1 352z"/></svg>
+                            <div class="ms-3">
+                                <p class="mb-2">Account Name</p>
+                                <h6 class="mb-0">Samwel Wensley</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4 nl">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M279.6 160.4C282.4 160.1 285.2 160 288 160C341 160 384 202.1 384 256C384 309 341 352 288 352C234.1 352 192 309 192 256C192 253.2 192.1 250.4 192.4 247.6C201.7 252.1 212.5 256 224 256C259.3 256 288 227.3 288 192C288 180.5 284.1 169.7 279.6 160.4zM480.6 112.6C527.4 156 558.7 207.1 573.5 243.7C576.8 251.6 576.8 260.4 573.5 268.3C558.7 304 527.4 355.1 480.6 399.4C433.5 443.2 368.8 480 288 480C207.2 480 142.5 443.2 95.42 399.4C48.62 355.1 17.34 304 2.461 268.3C-.8205 260.4-.8205 251.6 2.461 243.7C17.34 207.1 48.62 156 95.42 112.6C142.5 68.84 207.2 32 288 32C368.8 32 433.5 68.84 480.6 112.6V112.6zM288 112C208.5 112 144 176.5 144 256C144 335.5 208.5 400 288 400C367.5 400 432 335.5 432 256C432 176.5 367.5 112 288 112z"/></svg>
+                            <div class="ms-3">
+                                <p class="mb-2">Account Status</p>
+                                <h6 class="mb-0">ACTIVE</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Sale & Revenue End -->
+
+
+            <!-- Blank Start -->
+            <div class="container-fluid pt-4 px-4">
+                   
+                            <div class="h-100 bg-light rounded p-4">
+                                    <div class="d-flex align-items-center justify-content-between mb-2">
+                                        <h6 class="mb-0">ZA MOTO KUTOKA CRDB</h6>
+                                        <a href="">Show All</a>
+                                    </div>
+                                    <div class="d-flex align-items-center border-bottom py-3">
+                                        <img class="rounded-circle flex-shrink-0" src="{% static 'img/dp2.png' %}" alt="" style="width: 40px; height: 40px;">
+                                        <div class="w-100 ms-3">
+                                            <div class="d-flex w-100 justify-content-between">
+                                                <h6 class="mb-0">DEPOSIT</h6>
+                                                <small>45 minutes ago</small>
+                                            </div>
+                                            <span>Dear Customer ******* TZS has been deposited to your</span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center border-bottom py-3">
+                                        <img class="rounded-circle flex-shrink-0" src="{% static 'img/dp.png' %}" alt="" style="width: 40px; height: 40px;">
+                                        <div class="w-100 ms-3">
+                                            <div class="d-flex w-100 justify-content-between">
+                                                <h6 class="mb-0">CRDB BANK</h6>
+                                                <small>30 minutes ago</small>
+                                            </div>
+                                            <span>Je wafahamu! CRDB tumezindua rasmi deposit ATMs zenye uwezo wa...</span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center border-bottom py-3">
+                                        <img class="rounded-circle flex-shrink-0" src="{% static 'img/dp.png' %}" alt="" style="width: 40px; height: 40px;">
+                                        <div class="w-100 ms-3">
+                                            <div class="d-flex w-100 justify-content-between">
+                                                <h6 class="mb-0">CRDB BANK</h6>
+                                                <small>15 minutes ago</small>
+                                            </div>
+                                            <span>Ndugu mteja Ulipo Tupo...</span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center pt-3">
+                                        <img class="rounded-circle flex-shrink-0" src="{% static 'img/dp.png' %}" alt="" style="width: 40px; height: 40px;">
+                                        <div class="w-100 ms-3">
+                                            <div class="d-flex w-100 justify-content-between">
+                                                <h6 class="mb-0">CRDB BANK</h6>
+                                                <small>15 minutes ago</small>
+                                            </div>
+                                            <span>Ndugu mteja Asante kwa kurejesha asilimia 39% ya mkopo wako...</span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center border-bottom py-3">
+                                            <img class="rounded-circle flex-shrink-0" src="{% static 'img/dp2.png' %}" alt="" style="width: 40px; height: 40px;">
+                                            <div class="w-100 ms-3">
+                                                <div class="d-flex w-100 justify-content-between">
+                                                    <h6 class="mb-0">WITHDRAW</h6>
+                                                    <small>5 minutes ago</small>
+                                                </div>
+                                                <span>Dear Customer ******* TZS has been withdrawn to your</span>
+                                            </div>
+                                        </div>
+                                </div>
+                           
+               
+               
+ </div>
+</div>
+ 
+                        </div>
+                        </div>
+                      
+
+                        <!-- Blank End -->
+          <!-- Footer Start -->
+          <div class="container-fluid pt-4 px-4">
+                <div class="bg-light rounded-top p-4">
+                    <div class="row">
+                        <div class="col-12 col-sm-6 text-center text-sm-start">
+                            &copy; <a href="#">Loans Portal</a>, All Right Reserved. 
+                        </div>
+                        <div class="col-12 col-sm-6 text-center text-sm-end">
+                            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                            Designed By <a href="https://htmlcodex.com">Kudos Everyday</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer End -->
+        </div>
+        <!-- Content End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+   <!-- JavaScript Libraries -->
+   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+   <script src="{% static 'lib/chart/chart.min.js' %}"></script>
+   <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+   <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+   <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+   <script src="{% static 'lib/tempusdominus/js/moment.min.js' %}"></script>
+   <script src="{% static 'lib/tempusdominus/js/moment-timezone.min.js' %}"></script>
+   <script src="{% static 'lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js' %}"></script>
+
+   <!-- Template Javascript -->
+   <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,579 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>profile page</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="{% static 'img/favicon.ico' %}" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,900;1,100;1,900&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css' %}" rel="stylesheet" />
+
+    <!-- td list -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <!-- <link rel="stylesheet" href="C:\Users\Hp\OneDrive\Desktop\crdb\crdbhenry\Todo List App in JavaScript\style.css"> -->
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'css/beautified.css' %}" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    
+<script>
+        function openNav() {
+          document.getElementById("myNav").style.height = "100%";
+        }
+        
+        function closeNav() {
+          document.getElementById("myNav").style.height = "0%";
+        }
+        </script>
+</head>
+<body>
+    
+<div id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content" style="width: 65%; height: 55%; background-color: transparent;">
+                <div class="col-sm-12 col-xl-6 rollup">
+                        <div class="bg-light rounded h-100 p-4">
+                            <h6 class="mb-4">Edit Profile Details</h6>
+                            <form>
+                                <fieldset>
+                                    <legend>Contact Details</legend>
+                                <div class="row mb-3">
+                                    <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                                    <div class="col-sm-10">
+                                        <input type="email" class="form-control" id="email" required>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="inputPassword3" class="col-sm-2 col-form-label">Telephone</label>
+                                    <div class="col-sm-10">
+                                        <input type="number" class="form-control" id="telephone" required>
+                                    </div>
+                                </div>
+                            </fieldset>
+                                <fieldset class="row mb-3">
+                                    <legend class="">Residence Details</legend>
+                                    <div class="row mb-3">
+                                            <label for="inputEmail3" class="col-sm-2 col-form-label">Country</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" id="country" required>
+                                            </div>
+                                            </div>
+                                            <div class="row mb-3">
+                                                    <label for="inputEmail3" class="col-sm-2 col-form-label">City</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="text" class="form-control" id="city" required>
+                                                    </div>
+                                                    </div>
+                                                    <div class="row mb-3">
+                                                            <label for="inputEmail3" class="col-sm-2 col-form-label">District</label>
+                                                            <div class="col-sm-10">
+                                                                <input type="text" class="form-control" id="ward" required>
+                                                            </div>
+                                                            </div>
+                                                        <div class="mb-3">
+                                                                <label for="formFile" class="form-label">Upload Local Government letter</label>
+                                                                <input class="form-control" type="file" id="File" required>
+                                                            </div>
+                                     
+                                <button class="btn btn-primary" onClick=update()>Submit</button>
+                            </form>
+                        </div>
+                    </div>
+        </div>
+      </div>
+
+    <div class="container-xxl position-relative bg-white d-flex p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Ulipo Tupo...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Sidebar Start -->
+        <div class="sidebar dark pe-4 pb-3">
+            <nav class="navbar darki navbar-light">
+              
+                <div class="d-flex align-items-center ms-4 mb-4">
+                    <div class="position-relative">
+                        <img class="rounded-circle" src="https://thumbs.dreamstime.com/z/young-handsome-man-portrait-passport-driver-licence-document-id-photo-concept-176635965.jpg" alt="" style="width: 40px; height: 40px;object-fit: cover">
+                        <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
+                    </div>
+                    <div class="ms-3">
+                        <h6 class="mb-0">Sams Wensley</h6>
+                        <span>User</span>
+                    </div>
+                </div>
+                <div class="navbar-nav w-100">
+                    <a href="index.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>loan Application</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="#" class="dropdown-item">Apply for JIjenge</a>
+                            <a href="#" class="dropdown-item">Apply for Personal loan</a>
+                            <a href="#" class="dropdown-item">Apply for SME loan</a>
+                        </div>
+                    </div>
+                    <a href="#" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Loan Payment</a>
+                    <a href="blank.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Reports</a>
+                    <a href="NOTIFICATIONS.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Notifications</a>
+                  
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!-- Sidebar End -->
+
+
+        <!-- Content Start -->
+        <div class="content">
+            <!-- Navbar Start -->
+            <nav class="navbar navbar-expand bg-ligh navbar-light sticky-top px-4 py-0">
+                <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
+                    <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2>
+                </a>
+                <a href="#" class="sidebar-toggler flex-shrink-0">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                <div class="d-none d-md-flex ms-4">
+                        <img src="{% static 'img/CRDB-LOGO.png' %}"alt="crdb logo" style="width: 150px; height: auto; object-fit: cover;margin-left: 20px;">
+               
+                </div>
+              
+                <div class="navbar-nav align-items-center ms-auto">
+                    <div class="nav-item dropdown">
+                        
+                        <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+                            <a href="#" class="dropdown-item">
+                                <div class="d-flex align-items-center">
+                                    <img class="rounded-circle" src="{% static 'img/user.jpg' %}" alt="" style="width: 40px; height: 40px;">
+                                    <div class="ms-2">
+                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
+                                        <small>15 minutes ago</small>
+                                    </div>
+                                </div>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item">
+                                <div class="d-flex align-items-center">
+                                    <img class="rounded-circle" src="{% static 'img/user.jpg' %}" alt="" style="width: 40px; height: 40px;">
+                                    <div class="ms-2">
+                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
+                                        <small>15 minutes ago</small>
+                                    </div>
+                                </div>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item">
+                                <div class="d-flex align-items-center">
+                                    <img class="rounded-circle" src="{% static 'img/user.jpg' %}" alt="" style="width: 40px; height: 40px;">
+                                    <div class="ms-2">
+                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
+                                        <small>15 minutes ago</small>
+                                    </div>
+                                </div>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item text-center">See all message</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="fa fa-bell me-lg-2"></i>
+                            <span class="d-none d-lg-inline-flex">Notification</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+                            <a href="#" class="dropdown-item">
+                                <h6 class="fw-normal mb-0">Profile updated</h6>
+                                <small>15 minutes ago</small>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item">
+                                <h6 class="fw-normal mb-0">New user added</h6>
+                                <small>15 minutes ago</small>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item">
+                                <h6 class="fw-normal mb-0">Password changed</h6>
+                                <small>15 minutes ago</small>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item text-center">See all notifications</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <img class="rounded-circle me-lg-2" src="https://thumbs.dreamstime.com/z/young-handsome-man-portrait-passport-driver-licence-document-id-photo-concept-176635965.jpg" alt="" style="width: 40px; height: 40px;object-fit: cover;">
+                            <span class="d-none d-lg-inline-flex">Sams Wensley</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+                            <a href="#" class="dropdown-item">My Profile</a>
+                            <a href="#" class="dropdown-item">Settings</a>
+                            <a href="signin.html" class="dropdown-item">Log Out</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!-- Navbar End -->
+
+
+            <!-- Customer table Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4 nl">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M319.9 320c57.41 0 103.1-46.56 103.1-104c0-57.44-46.54-104-103.1-104c-57.41 0-103.1 46.56-103.1 104C215.9 273.4 262.5 320 319.9 320zM369.9 352H270.1C191.6 352 128 411.7 128 485.3C128 500.1 140.7 512 156.4 512h327.2C499.3 512 512 500.1 512 485.3C512 411.7 448.4 352 369.9 352zM512 160c44.18 0 80-35.82 80-80S556.2 0 512 0c-44.18 0-80 35.82-80 80S467.8 160 512 160zM183.9 216c0-5.449 .9824-10.63 1.609-15.91C174.6 194.1 162.6 192 149.9 192H88.08C39.44 192 0 233.8 0 285.3C0 295.6 7.887 304 17.62 304h199.5C196.7 280.2 183.9 249.7 183.9 216zM128 160c44.18 0 80-35.82 80-80S172.2 0 128 0C83.82 0 48 35.82 48 80S83.82 160 128 160zM551.9 192h-61.84c-12.8 0-24.88 3.037-35.86 8.24C454.8 205.5 455.8 210.6 455.8 216c0 33.71-12.78 64.21-33.16 88h199.7C632.1 304 640 295.6 640 285.3C640 233.8 600.6 192 551.9 192z"/></svg>
+                            <div class="ms-3">
+                                <p class="mb-2">Account Number</p>
+                                <h6 class="mb-0">0J991426893789</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4 nl">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M243.4 2.587C251.4-.8625 260.6-.8625 268.6 2.587L492.6 98.59C506.6 104.6 514.4 119.6 511.3 134.4C508.3 149.3 495.2 159.1 479.1 160V168C479.1 181.3 469.3 192 455.1 192H55.1C42.74 192 31.1 181.3 31.1 168V160C16.81 159.1 3.708 149.3 .6528 134.4C-2.402 119.6 5.429 104.6 19.39 98.59L243.4 2.587zM256 128C273.7 128 288 113.7 288 96C288 78.33 273.7 64 256 64C238.3 64 224 78.33 224 96C224 113.7 238.3 128 256 128zM127.1 416H167.1V224H231.1V416H280V224H344V416H384V224H448V420.3C448.6 420.6 449.2 420.1 449.8 421.4L497.8 453.4C509.5 461.2 514.7 475.8 510.6 489.3C506.5 502.8 494.1 512 480 512H31.1C17.9 512 5.458 502.8 1.372 489.3C-2.715 475.8 2.515 461.2 14.25 453.4L62.25 421.4C62.82 420.1 63.41 420.6 63.1 420.3V224H127.1V416z"/></svg>
+                            <div class="ms-3">
+                                <p class="mb-2">Account Type</p>
+                                <h6 class="mb-0">Savings Account</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4 nl">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Pro 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M535 7.03C544.4-2.343 559.6-2.343 568.1 7.029L632.1 71.02C637.5 75.52 640 81.63 640 87.99C640 94.36 637.5 100.5 632.1 104.1L568.1 168.1C559.6 178.3 544.4 178.3 535 168.1C525.7 159.6 525.7 144.4 535 135L558.1 111.1L384 111.1C370.7 111.1 360 101.2 360 87.99C360 74.74 370.7 63.99 384 63.99L558.1 63.1L535 40.97C525.7 31.6 525.7 16.4 535 7.03V7.03zM104.1 376.1L81.94 400L255.1 399.1C269.3 399.1 279.1 410.7 279.1 423.1C279.1 437.2 269.3 447.1 255.1 447.1L81.95 448L104.1 471C114.3 480.4 114.3 495.6 104.1 504.1C95.6 514.3 80.4 514.3 71.03 504.1L7.029 440.1C2.528 436.5-.0003 430.4 0 423.1C0 417.6 2.529 411.5 7.03 407L71.03 343C80.4 333.7 95.6 333.7 104.1 343C114.3 352.4 114.3 367.6 104.1 376.1H104.1zM95.1 64H337.9C334.1 71.18 332 79.34 332 87.1C332 116.7 355.3 139.1 384 139.1L481.1 139.1C484.4 157.5 494.9 172.5 509.4 181.9C511.1 184.3 513.1 186.6 515.2 188.8C535.5 209.1 568.5 209.1 588.8 188.8L608 169.5V384C608 419.3 579.3 448 544 448H302.1C305.9 440.8 307.1 432.7 307.1 423.1C307.1 395.3 284.7 371.1 255.1 371.1L158.9 372C155.5 354.5 145.1 339.5 130.6 330.1C128.9 327.7 126.9 325.4 124.8 323.2C104.5 302.9 71.54 302.9 51.23 323.2L31.1 342.5V128C31.1 92.65 60.65 64 95.1 64V64zM95.1 192C131.3 192 159.1 163.3 159.1 128H95.1V192zM544 384V320C508.7 320 480 348.7 480 384H544zM319.1 352C373 352 416 309 416 256C416 202.1 373 160 319.1 160C266.1 160 223.1 202.1 223.1 256C223.1 309 266.1 352 319.1 352z"/></svg>
+                            <div class="ms-3">
+                                <p class="mb-2">Account Name</p>
+                                <h6 class="mb-0">Samwel Wensley</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4 nl">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M279.6 160.4C282.4 160.1 285.2 160 288 160C341 160 384 202.1 384 256C384 309 341 352 288 352C234.1 352 192 309 192 256C192 253.2 192.1 250.4 192.4 247.6C201.7 252.1 212.5 256 224 256C259.3 256 288 227.3 288 192C288 180.5 284.1 169.7 279.6 160.4zM480.6 112.6C527.4 156 558.7 207.1 573.5 243.7C576.8 251.6 576.8 260.4 573.5 268.3C558.7 304 527.4 355.1 480.6 399.4C433.5 443.2 368.8 480 288 480C207.2 480 142.5 443.2 95.42 399.4C48.62 355.1 17.34 304 2.461 268.3C-.8205 260.4-.8205 251.6 2.461 243.7C17.34 207.1 48.62 156 95.42 112.6C142.5 68.84 207.2 32 288 32C368.8 32 433.5 68.84 480.6 112.6V112.6zM288 112C208.5 112 144 176.5 144 256C144 335.5 208.5 400 288 400C367.5 400 432 335.5 432 256C432 176.5 367.5 112 288 112z"/></svg>
+                            <div class="ms-3">
+                                <p class="mb-2">Account Status</p>
+                                <h6 class="mb-0">ACTIVE</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Sale & Revenue End -->
+
+             <!-- Recent Sales Start -->
+             <div class="container-fluid pt-4 px-4">
+                <div class="bg-light rounded p-4 deets">
+                    <div class="profile" style="display: block;">
+                            <h4>PERSONAL DETAILS</h4>
+                        <div class="flex b2">
+<div class="image">
+    <img class="m" src="https://thumbs.dreamstime.com/z/young-handsome-man-portrait-passport-driver-licence-document-id-photo-concept-176635965.jpg" alt="" style="width: 180px; height: 240px;object-fit: cover;">
+</div>
+    <div class="details" style="font-size: 12px;">
+        <div class="blah">
+       
+<div class="flex block">
+    <div class="info">
+        <div style="display: flex;"><span class="label">First Name: </span>   <div class="ans">Samwel</div></div>
+    </div>
+
+    <div class="info">
+        <div style="display: flex;"><span class="label">Middle Name: </span>   <div class="ans">Richard</div></div>
+        </div>
+        <div class="info">
+            <div style="display: flex;"><span class="label">Sur Name: </span>   <div class="ans">Wensley</div></div>
+            </div>
+    </div>
+    <div class="flex block">
+        <div class="info">
+            <div style="display: flex;"><span class="label">Gender: </span>   <div class="ans">Male</div></div>
+            </div>
+
+            <div class="info">
+            <div style="display: flex;"><span class="label">Nationality: </span>   <div class="ans">Russian</div></div>
+</div>
+        <div class="info">
+            <div style=" display: flex;"><span class="label">Marital Status: </span>   <div class="ans">Single</div></div>
+        </div>
+</div>
+</div>
+<div class="blah">
+<div class="flex block">
+
+    <div class="info">
+        <div style="display: flex;"><span class="label">Birth date: </span>   <div class="ans">11/11/1995</div></div>
+    </div>
+
+    <div class="info">
+        <div style=" display: flex;"><span class="label">Age: </span>   <div class="ans">27</div></div>
+    </div>
+    <div class="info">
+        <div style="display: flex;"><span class="label">ID Type:  </span>   <div class="ans">National ID</div></div>
+    </div>
+        </div>
+
+ 
+<div class="flex block">
+
+    <div class="info">
+        <div style="display: flex;"><span class="label">ID No: </span>   <div class="ans">199111-7895-0976</div></div>
+    </div>
+
+    <div class="info">
+        <div style="display: flex;"><span class="label">Occupation:</span>   <div class="ans">Managing Director</div></div>
+    </div>
+    <div class="info">
+        <div style="display: flex;"><span class="label">Postal Address:  </span>   <div class="ans">5678</div></div>
+    </div>
+        </div>
+
+    </div>
+    <div class="blah">     
+<div class="flex block">
+
+    <div class="info">
+        <div style="display: flex;"><span class="label">Telephone: </span>   <div class="ans" id="phoneno">+255 763 556 876</div></div>
+    </div>
+
+    <div class="info">
+        <div style="display: flex;"><span class="label">Social Network: </span>   <div class="ans">wensleySam<i> (twt)</i></div></div>
+    </div>
+    <div class="info">
+        <div style="display: flex;"><span class="label">E-mail: </span> <div class="ans" id="eadress"><a href="mailto: andrewglory184@gmail.com"></a>WensleyS@yahoo.com</a></div></div>
+    </div>
+        </div>
+
+        <div class="flex block">
+
+                <div class="info">
+                    <div style="display: flex;"><span class="label">Country: </span>   <div class="ans" id="cntry">Tanzania</div></div>
+                </div>
+            
+                <div class="info">
+                    <div style="display: flex;"><span class="label">City: </span>   <div class="ans" id="cty">Dodoma</div></div>
+                </div>
+                <div class="info">
+                    <div style="display: flex;"><span class="label">District: </span> <div class="ans" id="Dstrct"></div>Ilala</div>
+                </div>
+                    </div>
+    </div>  
+</div>
+</div>
+</div>
+                    </div>
+                    </div>
+        <!-- sales and bs -->
+
+
+         <!-- Recent Sales Start -->
+         <div class="container-fluid pt-4 px-4">
+                <div class="bg-light rounded p-4">
+                 
+                 <div class="profile" style="display: block;">
+                        <h4>NEXT OF KIN</h4>
+                    <div class="flex b2">
+<div class="image">
+<img class="m" src="data:image/jpeg;base64,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" alt="" style="width: 115px; height: 140px;object-fit: cover;">
+</div>
+                 <div class="details" style="font-size: 12px;">
+                        <div class="blah">
+                       
+                <div class="flex block">
+                    <div class="info">
+                        <div style="display: flex;"><span class="label">Name: </span>   <div class="ans">Martha Wensley</div></div>
+                    </div>
+                
+                    <div class="info">
+                            <div style="display: flex;"><span class="label">Country: </span>   <div class="ans">Russia</div></div>
+                            </div>
+                           
+                            <div class="info">
+                                    <div style="display: flex;"><span class="label">City: </span>   <div class="ans">sverling</div></div>
+                                    </div>
+                                    <div class="info">
+                                            <div style="display: flex;"><span class="label">District: </span>   <div class="ans">ling-ling</div></div>
+                                            </div>
+                          
+                    </div>
+                    <div class="flex block">
+                            <div class="info">
+                                    <div style="display: flex;"><span class="label">Relationship: </span>   <div class="ans">Mother</div></div>
+                                    </div>
+                        <div class="info">
+                            <div style="display: flex;"><span class="label">age: </span>   <div class="ans">57</div></div>
+                            </div>
+
+                            <div class="info">
+                                    <div style=" display: flex;"><span class="label">Telephone: </span>   <div class="ans">+435673878</div></div>
+                                </div>
+                                <div class="info">
+                                        <div style=" display: flex;"><span class="label">Email: </span>   <div class="ans">martharob@gmail.com</div></div>
+                                    </div>
+                </div>
+                  
+                </div>
+                </div>       
+                </div>
+                
+                    </div>
+                   <!-- next of kin2-->
+
+                    <div class="flex b2">
+                            <div class="image">
+                          <img class="m"   src="data:image/jpeg;base64,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"  alt="" style="width: 115px; height: 140px;object-fit: cover;" >
+                         </div>
+                                             <div class="details" style="font-size: 12px;">
+                                                    <div class="blah">
+                                                   
+                                                            <div class="flex block">
+                                                                    <div class="info">
+                                                                        <div style="display: flex;"><span class="label">Name: </span>   <div class="ans">Robert Wensley</div></div>
+                                                                    </div>
+                                                                
+                                                                    <div class="info">
+                                                                            <div style="display: flex;"><span class="label">Country: </span>   <div class="ans">Russia</div></div>
+                                                                            </div>
+                                                                           
+                                                                            <div class="info">
+                                                                                    <div style="display: flex;"><span class="label">City: </span>   <div class="ans">sverling</div></div>
+                                                                                    </div>
+                                                                                    <div class="info">
+                                                                                            <div style="display: flex;"><span class="label">ward: </span>   <div class="ans">ling-ling</div></div>
+                                                                                            </div>
+                                                                          
+                                                                    </div>
+                                                                    <div class="flex block">
+                                                                            <div class="info">
+                                                                                    <div style="display: flex;"><span class="label">Relationship: </span>   <div class="ans">Father</div></div>
+                                                                                    </div>
+                                                                        <div class="info">
+                                                                            <div style="display: flex;"><span class="label">age: </span>   <div class="ans">57</div></div>
+                                                                            </div>
+                                                
+                                                                            <div class="info">
+                                                                                    <div style=" display: flex;"><span class="label">Telephone: </span>   <div class="ans">+435866878</div></div>
+                                                                                </div>
+                                                                                <div class="info">
+                                                                                        <div style=" display: flex;"><span class="label">Email: </span>   <div class="ans">robwes@gmail.com</div></div>
+                                                                                    </div>
+                                                                </div>
+                                                                  
+                                                            
+                                                </div>
+                    </div>
+                    </div>
+                    </div>
+
+                    
+<div class="right">
+        <button type="button" class="btn btn-success m-2" onclick="openNav()">EDIT INFO</button>
+        </div>
+        <!-- sales and bs -->
+            
+           <!-- Footer Start -->
+           <div class="container-fluid pt-4 px-4">
+            <div class="bg-light rounded-top p-4">
+                <div class="row">
+                    <div class="col-12 col-sm-6 text-center text-sm-start">
+                        &copy; <a href="#">Loans Portal</a>, All Right Reserved. 
+                    </div>
+                    <div class="col-12 col-sm-6 text-center text-sm-end">
+                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                        Designed By <a href="https://htmlcodex.com">Kudos Everyday</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+    </div>
+
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    
+
+  <!-- <div class="wrapper">
+      <div class="task-input">
+        <img src="bars-icon.svg" alt="icon">
+        <input type="text" placeholder="Add a new task">
+      </div>
+      <div class="controls">
+        <div class="filters">
+          <span class="active" id="all">All</span>
+          <span id="pending">Pending</span>
+          <span id="completed">Completed</span>
+        </div>
+        <button class="clear-btn">Clear All</button>
+      </div>
+      <ul class="task-box"></ul>
+    </div> -->
+
+<script>
+    function update(){
+        var email = document.getElementById("email");
+        var Telephone = document.getElementById("telephone");
+        var country = document.getElementById("country");
+        var city = document.getElementById("city");
+        var District = document.getElementById("ward");
+
+document.getElementById("phoneno").innerHTML = Telephone;
+
+document.getElementById("eadress").innerHTML = email;
+
+document.getElementById("cntry").innerHTML = country;
+
+document.getElementById("cty").innerHTML = city;
+
+document.getElementById("Dstrct").innerHTML = District;
+
+
+
+
+
+
+
+
+
+    }
+</script>
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'lib/chart/chart.min.js' %}"></script>
+    <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+    <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+    <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'lib/tempusdominus/js/moment.min.js' %}"></script>
+    <script src="{% static 'lib/tempusdominus/js/moment-timezone.min.js' %}"></script>
+    <script src="{% static 'lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js' %}"></script>
+
+    <!-- Template Javascript -->
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+
+</html>
